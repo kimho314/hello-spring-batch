@@ -15,7 +15,7 @@ spring:
             maximum-pool-size: 20
     batch:
         job:
-            name: "helloJob"
+            name: "importPersonJob"
             enabled: true
         jdbc:
             initialize-schema: embedded
