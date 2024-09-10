@@ -2,12 +2,20 @@ spring:
     application:
         name: hello-spring-batch
     datasource:
-        driver-class-name: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://localhost:3306/batch
-        username: root
-        password: ghtjq2959@
+        #        driver-class-name: com.mysql.cj.jdbc.Driver
+        #        url: jdbc:mysql://localhost:3306/batch
+        #        username: root
+        #        password: ghtjq2959@
+        hikari:
+            auto-commit: false
+            username: root
+            password: ghtjq2959@
+            driver-class-name: com.mysql.cj.jdbc.Driver
+            jdbc-url: jdbc:mysql://localhost:3306/batch
+            maximum-pool-size: 20
     batch:
         job:
             name: "helloJob"
+            enabled: true
         jdbc:
-            initialize-schema: always
+            initialize-schema: embedded
